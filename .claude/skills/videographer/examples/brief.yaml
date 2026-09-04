@@ -1,0 +1,33 @@
+job_id: mm-2026-09-04-ep41
+channel: microphone-and-mouse
+language: bg
+title: "Новите чипове на Apple и какво значат за нас"
+duration_target: 600
+targets: [youtube-16x9, shorts-9x16]
+voice:
+  source: assets/audio/vo.wav
+segments:
+  - id: cold-open
+    script_ref: "#cold-open"
+    visuals:
+      - assets/clips/keynote.mp4 [00:12-00:31]
+    overlay: "M5 е тук"
+    short: true
+  - id: story-1
+    script_ref: "#story-1"
+    visuals:
+      - assets/images/m5_chart.png
+      - assets/clips/benchmark.mp4 [01:05-01:40]
+    b_roll_policy: unique
+  - id: outro-cta
+    script_ref: "#outro"
+    visuals:
+      - assets/images/subscribe.png
+music:
+  mood: calm-tech
+  duck_under_voice: true
+subtitles: burned
+thumbnail:
+  text: "M5: струва ли си?"
+  base_image: assets/images/m5_hero.png
+notes: "Keep the benchmark clip at native speed."

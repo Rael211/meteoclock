@@ -1,0 +1,43 @@
+id: microphone-and-mouse
+display_name: "Микрофон и мишка"
+language: bg
+owner: Obla LLC
+
+brand:
+  font_primary: "Noto Sans"          # full Cyrillic
+  font_display: "Montserrat Alternates"
+  color_primary: "#2B7DE9"
+  color_accent: "#FF6B35"
+  color_bg: "#101418"
+  color_text: "#FFFFFF"
+  logo: brand/mm_logo.png
+
+templates:
+  intro: brand/mm_intro.mp4
+  outro: brand/mm_outro.mp4
+  lower_third: brand/mm_lower_third.png
+  chapter_card: brand/mm_chapter.png
+  thumbnail: brand/mm_thumb.png
+
+style:
+  transition: cut
+  transition_ms: 200
+  still_motion: ken-burns
+  max_still_seconds: 8
+  subtitle_position: bottom
+  subtitle_max_chars: 40
+  safe_area_pct: 5
+
+audio:
+  voice_lufs: -16
+  music_lufs: -24
+  master_lufs: -14
+  duck_db: -14
+  music_library: assets/music/
+
+targets:
+  youtube-16x9: {w: 1920, h: 1080, fps: 30, vcodec: libx264, crf: 18, acodec: aac, abr: 192k}
+  shorts-9x16:  {w: 1080, h: 1920, fps: 30, vcodec: libx264, crf: 20, acodec: aac, abr: 160k, max_seconds: 59}
+
+tools:
+  renderer: ffmpeg
