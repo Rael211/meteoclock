@@ -1,0 +1,43 @@
+id: linuxschool
+display_name: "LinuxSchool"
+language: en
+owner: Obla LLC
+
+brand:
+  font_primary: "Inter"
+  font_display: "JetBrains Mono"
+  color_primary: "#3DDC84"
+  color_accent: "#FFD166"
+  color_bg: "#0B0F0C"
+  color_text: "#E8F5E9"
+  logo: brand/ls_logo.png
+
+templates:
+  intro: brand/ls_intro.mp4
+  outro: brand/ls_outro.mp4
+  lower_third: brand/ls_lower_third.png
+  chapter_card: brand/ls_chapter.png
+  thumbnail: brand/ls_thumb.png
+
+style:
+  transition: dissolve
+  transition_ms: 300
+  still_motion: static        # screenshots and terminals should not drift
+  max_still_seconds: 12
+  subtitle_position: bottom
+  subtitle_max_chars: 42
+  safe_area_pct: 5
+
+audio:
+  voice_lufs: -16
+  music_lufs: -26
+  master_lufs: -14
+  duck_db: -12
+  music_library: assets/music/
+
+targets:
+  youtube-16x9: {w: 1920, h: 1080, fps: 30, vcodec: libx264, crf: 18, acodec: aac, abr: 192k}
+  shorts-9x16:  {w: 1080, h: 1920, fps: 30, vcodec: libx264, crf: 20, acodec: aac, abr: 160k, max_seconds: 59}
+
+tools:
+  renderer: ffmpeg
