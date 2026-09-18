@@ -1,0 +1,22 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "meteoclock@obla.us",
+                "Name": "Orlin Chotev"
+            }
+        ],
+        "Category": "Date and Time",
+        "Description": "MeteoClock: https://obla.us/#meteoclock\nNews source: Fact Refinery: https://www.factrefinery.com",
+        "Description[bg]": "MeteoClock: https://obla.us/#meteoclock\nИзточник на новините: Fact Refinery: https://www.factrefinery.com",
+        "Icon": "meteoclock",
+        "Id": "com.obla.meteoclock",
+        "License": "GPL-3.0-or-later",
+        "Name": "MeteoClock",
+        "Name[bg]": "MeteoClock",
+        "Version": "1.0",
+        "Website": "https://obla.us/#meteoclock"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

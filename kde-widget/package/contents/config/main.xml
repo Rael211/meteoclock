@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+  <group name="General">
+    <entry name="city" type="String">
+      <default>Sofia</default>
+    </entry>
+    <entry name="metric" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="use24h" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showSeconds" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="showDate" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="layout" type="String">
+      <default>modern</default>
+    </entry>
+    <entry name="background" type="String">
+      <default>theme</default>
+    </entry>
+    <entry name="tintOpacity" type="Int">
+      <default>55</default>
+    </entry>
+    <entry name="dimAtNight" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showNews" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="newsLang" type="String">
+      <default>bg</default>
+    </entry>
+    <entry name="tickerSeconds" type="Int">
+      <default>8</default>
+    </entry>
+    <entry name="refreshMinutes" type="Int">
+      <default>15</default>
+    </entry>
+  </group>
+</kcfg>
