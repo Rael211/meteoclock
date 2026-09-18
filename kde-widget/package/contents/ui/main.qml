@@ -51,6 +51,10 @@ PlasmoidItem {
     readonly property string conditionText: hasWeather ? Weather.textFor(weatherCode, uiLang) : statusText
     readonly property string tempText: hasWeather ? Math.round(temperature) + unitSuffix : "--"
     readonly property bool dimmed: cfgDim && !isDay
+    // A thin tint over a bright wallpaper leaves light text on a light surface,
+    // so anything under a solid-ish tint keeps the text shadow as well.
+    readonly property bool needsShadow: cfgBackground === "none"
+            || (cfgBackground === "tint" && Plasmoid.configuration.tintOpacity < 80)
 
     // No background means Plasma hands the widget the complementary colour set,
     // which is white text: unreadable on a light wallpaper. The theme background
@@ -261,21 +265,16 @@ PlasmoidItem {
             width: parent.width
             height: face.bodyHeight
             // The whole face dims after dark, the ticker keeps its own contrast.
-            // Without a background Plasma hands out the complementary set (white
-            // text for the wallpaper); with one, normal window colours must be
-            // used or the text is white on a light theme panel.
-            Kirigami.Theme.inherit: false
-            Kirigami.Theme.colorSet: root.cfgBackground === "none"
-                    ? Kirigami.Theme.Complementary : Kirigami.Theme.Window
-
-            opacity: root.dimmed ? 0.55 : 1.0
+            // On the widget's own panel a deep fade eats the contrast, so the
+            // night dimming is gentler there than over bare wallpaper.
+            opacity: root.dimmed ? (root.cfgBackground === "none" ? 0.55 : 0.7) : 1.0
             Behavior on opacity {
                 NumberAnimation { duration: 800 }
             }
 
             // Standing in for the CSS text-shadow of the original face: without
             // it, bare text on a busy wallpaper is unreadable either way round.
-            layer.enabled: root.cfgBackground === "none"
+            layer.enabled: root.needsShadow
             layer.effect: MultiEffect {
                 shadowEnabled: true
                 shadowColor: "black"

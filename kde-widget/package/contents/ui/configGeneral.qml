@@ -73,7 +73,7 @@ KCM.SimpleKCM {
             id: tintSlider
             Kirigami.FormData.label: i18n("Tint strength:")
             enabled: cfg_background === "tint"
-            from: 10
+            from: 20
             to: 100
             stepSize: 5
             snapMode: QQC2.Slider.SnapAlways

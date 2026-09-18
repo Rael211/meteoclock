@@ -27,7 +27,7 @@
       <default>theme</default>
     </entry>
     <entry name="tintOpacity" type="Int">
-      <default>55</default>
+      <default>85</default>
     </entry>
     <entry name="dimAtNight" type="Bool">
       <default>true</default>
